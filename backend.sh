@@ -61,6 +61,7 @@ VALIDATE $? "Extracted backend code"
 npm install &>>$LOGFILE
 VALIDATE $? "Installing nodejs dependencies"
 
+#Check your repo and path
 cp /home/ec2-user//expense-script/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
 VALIDATE $? "Copied backend sevice"
 
@@ -80,7 +81,7 @@ mysql -h db.neelareddy.store -uroot -p${mysql_root_password} < /app/schema/backe
 VALIDATE $? "Schema loading"
 
 systemctl restart backend &>>$LOGFILE
-VALIDATE $? "Restartinf backend"
+VALIDATE $? "Restarting backend"
 
 
 
