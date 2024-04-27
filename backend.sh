@@ -5,7 +5,7 @@ source ./common.sh
 check_root
 
 echo "Please enter DB password:"
-read -s mysql_root_password
+read mysql_root_password
 
 dnf module disable nodejs -y &>>$LOGFILE
 dnf module enable nodejs:20 -y &>>$LOGFILE
